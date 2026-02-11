@@ -170,7 +170,7 @@ function Hero() {
                         { value: '0', label: 'Investimento do Tauste', suffix: 'R$' },
                         { value: '24/7', label: 'Operação contínua' },
                         { value: '100%', label: 'Custos cobertos pela Tektron' },
-                        { value: '360°', label: 'Visibilidade de esquina' },
+                        { value: '∞', label: 'Valor agregado para o Tauste' },
                     ].map((stat, i) => (
                         <div key={i} className="text-center">
                             <div className="text-2xl md:text-3xl font-extrabold text-white">
