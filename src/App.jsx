@@ -17,6 +17,9 @@ import {
     CheckCircle2,
     Star,
     Eye,
+    Wallet,
+    MonitorPlay,
+    ShieldCheck,
 } from 'lucide-react'
 
 /* ───────────────────────────── helpers ───────────────────────────── */
@@ -152,7 +155,7 @@ function Hero() {
                         className="flex items-center gap-2 text-gray-400 hover:text-white font-medium text-lg transition-colors"
                     >
                         <Phone className="w-5 h-5" />
-                        Falar com Rafael
+                        Falar com Gabriela
                     </a>
                 </motion.div>
 
@@ -210,8 +213,8 @@ const cards = [
         title: 'Diferencial Tecnológico',
         subtitle: 'À frente da concorrência.',
         description:
-            'Um painel LED de alta resolução na esquina mais movimentada da região posiciona o Tauste como referência em inovação — um diferencial que nenhum concorrente terá.',
-        highlights: ['Alta resolução LED', 'Imagem premium', 'Exclusividade regional'],
+            'Um painel LED de alta resolução na esquina mais movimentada da região posiciona o Tauste como referência em inovação.',
+        highlights: ['Alta resolução LED', 'Imagem premium', 'Exclusividade'],
     },
 ]
 
@@ -341,8 +344,8 @@ function TechnicalSpecs() {
                                         <div className="absolute inset-0 grid-pattern opacity-30" />
                                         <div className="text-center relative z-10">
                                             <Monitor className="w-16 h-16 text-tauste-red/60 mx-auto mb-3" />
-                                            <p className="text-sm font-semibold text-white">Painel LED 4×3m</p>
-                                            <p className="text-xs text-gray-500">Full-Color • P10 Outdoor</p>
+                                            <p className="text-sm font-semibold text-white">Painel LED 4×2m</p>
+                                            <p className="text-xs text-gray-500">Full-Color • P5 Outdoor</p>
                                         </div>
                                     </div>
                                 </div>
@@ -350,8 +353,8 @@ function TechnicalSpecs() {
                                 {/* Specs grid */}
                                 <div className="grid grid-cols-2 gap-3">
                                     {[
-                                        { label: 'Resolução', value: 'P10 Outdoor' },
-                                        { label: 'Brilho', value: '6.500 nits' },
+                                        { label: 'Resolução', value: 'P5 Outdoor' },
+                                        { label: 'Sistema', value: 'Criado e mantido pela Tektron' },
                                         { label: 'Operação', value: '24 horas' },
                                         { label: 'Energia', value: 'Independente' },
                                     ].map((spec, i) => (
@@ -373,65 +376,217 @@ function TechnicalSpecs() {
     )
 }
 
-/* ───────────────────────── location section ──────────────────────── */
+/* ─────────────────────── benefícios concretos ─────────────────────── */
+
+const benefits = [
+    {
+        icon: Wallet,
+        title: 'Monetização do Espaço',
+        desc: 'Transformamos uma área ociosa da fachada em receita recorrente imediata através de aluguel do espaço.',
+    },
+    {
+        icon: MonitorPlay,
+        title: 'Canal de Mídia Exclusivo',
+        desc: 'Nenhuma empresa do mesmo segmento será anunciada no painel. O Tauste poderá avaliar a possibilidade de realizar uma proposta para veiculação de ofertas e promoções a qualquer momento.',
+    },
+    {
+        icon: ShieldCheck,
+        title: 'Zero Dor de Cabeça',
+        desc: 'Licenças, prefeitura, elétrica, manutenção e criação de arte para terceiros: tudo por conta da Tektron.',
+    },
+]
 
 function LocationSection() {
     return (
         <Section className="py-24 md:py-32 relative">
             <div className="section-divider mx-auto max-w-4xl mb-24" />
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-6xl mx-auto px-6">
                 <FadeIn className="text-center mb-16">
                     <span className="text-tauste-red font-semibold text-sm tracking-widest uppercase">
-                        Localização Estratégica
+                        O que o Tauste ganha
                     </span>
                     <h2 className="text-3xl md:text-5xl font-extrabold mt-4 mb-6">
-                        A esquina com o{' '}
+                        Benefícios{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-tauste-red to-red-400">
-                            maior fluxo
+                            concretos
                         </span>{' '}
-                        da região
+                        e imediatos
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        Posicionado na Rua Capitão Gomes Duarte × Rio Branco — um cruzamento de altíssima
-                        circulação de veículos e pedestres, garantindo milhares de visualizações diárias.
+                        Veja exatamente o que a parceria entrega ao Tauste desde o primeiro dia.
                     </p>
                 </FadeIn>
 
-                <FadeIn delay={0.2}>
-                    <div className="glass-card rounded-3xl p-8 max-w-4xl mx-auto">
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {[
-                                {
-                                    icon: Eye,
-                                    value: 'Milhares',
-                                    label: 'de impactos visuais por dia',
-                                    desc: 'Esquina de alto tráfego com semáforo — motoristas parados diretamente na frente do painel.',
-                                },
-                                {
-                                    icon: MapPin,
-                                    value: '360°',
-                                    label: 'visibilidade total',
-                                    desc: 'O painel será visível de ambas as vias, aproveitando o vértice da esquina para máximo alcance.',
-                                },
-                                {
-                                    icon: Star,
-                                    value: '#1',
-                                    label: 'da região',
-                                    desc: 'Nenhum outro ponto comercial na área oferece este nível de exposição digital outdoor.',
-                                },
-                            ].map((item, i) => (
-                                <div key={i} className="text-center">
-                                    <div className="w-14 h-14 rounded-xl bg-tauste-red/10 border border-tauste-red/20 flex items-center justify-center mx-auto mb-4">
-                                        <item.icon className="w-7 h-7 text-tauste-red" />
-                                    </div>
-                                    <div className="text-2xl font-extrabold text-white mb-1">{item.value}</div>
-                                    <div className="text-sm font-semibold text-tauste-red mb-2">{item.label}</div>
-                                    <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+                <div className="grid md:grid-cols-3 gap-8">
+                    {benefits.map((item, i) => (
+                        <FadeIn key={i} delay={i * 0.12}>
+                            <div className="bg-tektron-card p-6 rounded-xl border border-tektron-border hover:border-tauste-red transition-colors duration-300">
+                                <div className="bg-tektron-dark w-16 h-16 rounded-full flex items-center justify-center mb-6 border border-tektron-border">
+                                    <item.icon className="w-8 h-8 text-tauste-red" />
                                 </div>
-                            ))}
+                                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                                <p className="text-gray-warm">{item.desc}</p>
+                            </div>
+                        </FadeIn>
+                    ))}
+                </div>
+            </div>
+        </Section>
+    )
+}
+/* ────────────────── espaço desperdiçado (casual) ──────────────────── */
+
+function WastedSpace() {
+    return (
+        <Section className="py-20 md:py-28 relative overflow-hidden">
+            <div className="max-w-6xl mx-auto px-6">
+                <div className="grid lg:grid-cols-2 gap-10 items-center">
+                    {/* Left: image with annotations */}
+                    <FadeIn>
+                        <div className="relative">
+                            {/* Image placeholder — replace src with your local image */}
+                            <div className="relative rounded-2xl overflow-hidden border-2 border-dashed border-gray-700 group">
+                                <img
+                                    src="/local-vazio.jpg"
+                                    alt="Espaço vazio na esquina do Tauste"
+                                    className="w-full aspect-[4/3] object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500"
+                                    onError={(e) => {
+                                        e.target.style.display = 'none'
+                                        e.target.nextSibling.style.display = 'flex'
+                                    }}
+                                />
+                                {/* Fallback if image not found */}
+                                <div className="w-full aspect-[4/3] bg-tektron-card items-center justify-center hidden">
+                                    <div className="text-center">
+                                        <MapPin className="w-12 h-12 text-gray-600 mx-auto mb-3" />
+                                        <p className="text-gray-500 text-sm">Adicione a foto do local em</p>
+                                        <code className="text-xs text-tauste-red">/public/local-vazio.jpg</code>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </FadeIn>
+
+                    {/* Right: persuasive copy */}
+                    <FadeIn delay={0.2}>
+                        <div>
+                            <motion.div
+                                className="inline-block bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full mb-6 tracking-wider uppercase"
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                                viewport={{ once: true }}
+                            >
+                                ⚡ Oportunidade real
+                            </motion.div>
+
+                            <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-6">
+                                Essa esquina{' '}
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-tauste-red">
+                                    já poderia estar
+                                </span>
+                                <br />
+                                gerando receita.
+                            </h2>
+
+                            <p className="text-gray-400 text-lg leading-relaxed mb-6">
+                                Enquanto essa fachada continua vazia, o espaço perde valor todo dia.
+                                Um painel LED transforma esse cenário em algo que{' '}
+                                <span className="text-white font-semibold">atrai olhares, gera receita</span>{' '}
+                                e posiciona o Tauste como referência na região.
+                            </p>
+
+                            <div className="space-y-3">
+                                {[
+                                    'Chama atenção do público',
+                                    'Posiciona o mercado como moderno e tecnológico',
+                                    'Sem custo, sem obra, sem dor de cabeça',
+                                ].map((item, i) => (
+                                    <motion.div
+                                        key={i}
+                                        className="flex items-center gap-3"
+                                        initial={{ opacity: 0, x: 20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: 0.4 + i * 0.1 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <div className="w-6 h-6 rounded-full bg-tauste-red/20 flex items-center justify-center flex-shrink-0">
+                                            <CheckCircle2 className="w-4 h-4 text-tauste-red" />
+                                        </div>
+                                        <span className="text-gray-300 text-sm">{item}</span>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    </FadeIn>
+                </div>
+            </div>
+        </Section>
+    )
+}
+
+/* ───────────────────── galeria de exemplos ────────────────────── */
+
+function ImageShowcase() {
+    /* 
+      Para adicionar suas imagens:
+      1. Coloque os arquivos em /public/ (ex: exemplo-1.jpg, exemplo-2.jpg, etc.)
+      2. Atualize os src abaixo com os nomes dos arquivos
+    */
+    const examples = [
+        { src: '/exemplo-1.png', label: 'Exemplo de painel instalado' },
+        { src: '/exemplo-2.png', label: 'Visão da Rio Branco' },
+        { src: '/exemplo-3.png', label: 'Visão da Capitão Gomes Duarte' },
+    ]
+
+    return (
+        <Section className="py-20 md:py-28 relative">
+            <div className="section-divider mx-auto max-w-4xl mb-20" />
+            <div className="max-w-6xl mx-auto px-6">
+                <FadeIn className="text-center mb-14">
+                    <span className="text-tauste-red font-semibold text-sm tracking-widest uppercase">
+                        Portfólio
+                    </span>
+                    <h2 className="text-3xl md:text-4xl font-extrabold mt-4 mb-4">
+                        Veja como fica na{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-tauste-red to-red-400">
+                            prática
+                        </span>
+                    </h2>
+                    <p className="text-gray-400 text-lg max-w-xl mx-auto">
+                        Exemplos reais de painéis instalados pela Tektron em pontos estratégicos.
+                    </p>
                 </FadeIn>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                    {examples.map((img, i) => (
+                        <FadeIn key={i} delay={i * 0.12}>
+                            <div className="group relative rounded-2xl overflow-hidden border border-tektron-border hover:border-tauste-red/40 transition-all duration-500">
+                                <img
+                                    src={img.src}
+                                    alt={img.label}
+                                    className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
+                                    onError={(e) => {
+                                        e.target.style.display = 'none'
+                                        e.target.nextSibling.style.display = 'flex'
+                                    }}
+                                />
+                                {/* Fallback placeholder */}
+                                <div className="w-full aspect-[4/3] bg-tektron-card items-center justify-center hidden">
+                                    <div className="text-center px-4">
+                                        <Monitor className="w-10 h-10 text-gray-600 mx-auto mb-2" />
+                                        <p className="text-gray-500 text-xs">Adicione imagem em</p>
+                                        <code className="text-xs text-tauste-red">/public{img.src}</code>
+                                    </div>
+                                </div>
+                                {/* Label overlay */}
+                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4 pt-10">
+                                    <p className="text-sm font-medium text-white">{img.label}</p>
+                                </div>
+                            </div>
+                        </FadeIn>
+                    ))}
+                </div>
             </div>
         </Section>
     )
@@ -520,20 +675,20 @@ function Contact() {
                 <FadeIn delay={0.2}>
                     <div className="glass-card rounded-3xl p-10 max-w-lg mx-auto red-glow">
                         <div className="w-20 h-20 rounded-full bg-tauste-red/10 border-2 border-tauste-red/30 flex items-center justify-center mx-auto mb-6">
-                            <span className="text-3xl font-extrabold text-tauste-red">RT</span>
+                            <span className="text-3xl font-extrabold text-tauste-red">G</span>
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-1">Rafael Tavares</h3>
+                        <h3 className="text-2xl font-bold text-white mb-1">Gabriela</h3>
                         <p className="text-tauste-red font-medium mb-6">Tektron — Representante Comercial</p>
 
                         <div className="space-y-3 mb-8">
                             <div className="flex items-center justify-center gap-3 text-gray-300">
                                 <Phone className="w-5 h-5 text-tauste-red" />
-                                <span className="text-lg font-medium">(14) 99772-3742</span>
+                                <span className="text-lg font-medium">(14) 99131-5000</span>
                             </div>
                         </div>
 
                         <a
-                            href="https://wa.me/5514997723742?text=Ol%C3%A1%20Rafael%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20proposta%20do%20painel%20LED%20Tektron%20para%20o%20Tauste."
+                            href="https://wa.me/5514991315000?text=Ol%C3%A1%20Gabriela%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20proposta%20do%20painel%20LED%20Tektron%20para%20o%20Tauste."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-green-600/20 hover:shadow-green-600/40 btn-shine w-full justify-center"
@@ -583,6 +738,8 @@ export default function App() {
             <ValueProposition />
             <TechnicalSpecs />
             <LocationSection />
+            <WastedSpace />
+            <ImageShowcase />
             <Persuasion />
             <Contact />
             <Footer />
