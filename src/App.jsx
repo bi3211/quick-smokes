@@ -698,7 +698,7 @@ function Footer() {
                         <Monitor className="w-3 h-3 text-white" />
                     </div>
                     <span className="text-sm text-gray-500">
-                        <span className="text-white font-semibold">Tektron</span> × Tauste — Proposta Comercial 2026
+                        <span className="text-white font-semibold">Tektron</span> Em parceria com o Tauste Supermercados — Proposta Comercial 2026
                     </span>
                 </div>
                 <p className="text-xs text-gray-600">
