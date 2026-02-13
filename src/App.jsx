@@ -186,7 +186,7 @@ const cards = [
         title: 'Renda Extra Passiva',
         subtitle: 'Seu espaço gerando receita.',
         description:
-            'Transforme metros quadrados ociosos em uma fonte de receita recorrente. A fachada do Tauste passa a gerar valor sem nenhum esforço operacional.',
+            'Transforme metros quadrados ociosos em uma fonte de receita recorrente. O estacionamento do Tauste passa a gerar valor sem nenhum esforço operacional.',
         highlights: ['Receita recorrente', 'Sem esforço operacional', 'Valorização do imóvel'],
     },
     {
