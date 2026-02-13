@@ -158,28 +158,7 @@ function Hero() {
                     </a>
                 </motion.div>
 
-                {/* Stats bar */}
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                    className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-                >
-                    {[
-                        { value: '0', label: 'Investimento do Tauste', suffix: 'R$' },
-                        { value: '24/7', label: 'Operação contínua' },
-                        { value: '100%', label: 'Custos cobertos pela Tektron' },
-                        { value: '∞', label: 'Valor agregado para o Tauste' },
-                    ].map((stat, i) => (
-                        <div key={i} className="text-center">
-                            <div className="text-2xl md:text-3xl font-extrabold text-white">
-                                {stat.suffix && <span className="text-tauste-red text-lg">{stat.suffix}</span>}
-                                {stat.value}
-                            </div>
-                            <div className="text-xs md:text-sm text-gray-500 mt-1">{stat.label}</div>
-                        </div>
-                    ))}
-                </motion.div>
+
             </div>
 
             {/* Bottom fade */}
@@ -189,6 +168,84 @@ function Hero() {
 }
 
 
+
+
+/* ──────────────────────── value proposition ──────────────────────── */
+
+const cards = [
+    {
+        icon: DollarSign,
+        title: 'Zero Investimento',
+        subtitle: 'Sem custo. Sem risco.',
+        description:
+            'A Tektron arca com 100% dos custos de instalação, energia elétrica independente e manutenção contínua. O Tauste não investe um centavo — apenas disponibiliza o espaço.',
+        highlights: ['Instalação gratuita', 'Energia independente', 'Manutenção inclusa'],
+    },
+    {
+        icon: TrendingUp,
+        title: 'Renda Extra Passiva',
+        subtitle: 'Seu espaço gerando receita.',
+        description:
+            'Transforme metros quadrados ociosos em uma fonte de receita recorrente. A fachada do Tauste passa a gerar valor sem nenhum esforço operacional.',
+        highlights: ['Receita recorrente', 'Sem esforço operacional', 'Valorização do imóvel'],
+    },
+    {
+        icon: Cpu,
+        title: 'Diferencial Tecnológico',
+        subtitle: 'À frente da concorrência.',
+        description:
+            'Um painel LED de alta resolução na esquina mais movimentada da região posiciona o Tauste como referência em inovação.',
+        highlights: ['Alta resolução LED', 'Imagem premium', 'Exclusividade'],
+    },
+]
+
+function ValueProposition() {
+    return (
+        <Section id="proposta" className="py-24 md:py-32 relative">
+            <div className="max-w-7xl mx-auto px-6">
+                <FadeIn className="text-center mb-16">
+                    <span className="text-tauste-red font-semibold text-sm tracking-widest uppercase">
+                        Por que aceitar esta proposta
+                    </span>
+                    <h2 className="text-3xl md:text-5xl font-extrabold mt-4 mb-6">
+                        Vantagens para o{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-tauste-red to-red-400">
+                            Tauste
+                        </span>
+                    </h2>
+                    <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                        Uma oportunidade única de monetizar o espaço sem qualquer investimento ou responsabilidade operacional.
+                    </p>
+                </FadeIn>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                    {cards.map((card, i) => (
+                        <FadeIn key={i} delay={i * 0.15}>
+                            <div className="glass-card rounded-2xl p-8 h-full transition-all duration-500 hover:-translate-y-2 group">
+                                <div className="w-14 h-14 rounded-xl bg-tauste-red/10 border border-tauste-red/20 flex items-center justify-center mb-6 group-hover:bg-tauste-red/20 transition-colors">
+                                    <card.icon className="w-7 h-7 text-tauste-red" />
+                                </div>
+
+                                <h3 className="text-xl font-bold mb-1">{card.title}</h3>
+                                <p className="text-tauste-red text-sm font-medium mb-4">{card.subtitle}</p>
+                                <p className="text-gray-400 text-sm leading-relaxed mb-6">{card.description}</p>
+
+                                <ul className="space-y-2">
+                                    {card.highlights.map((item, j) => (
+                                        <li key={j} className="flex items-center gap-2 text-sm text-gray-300">
+                                            <CheckCircle2 className="w-4 h-4 text-tauste-red flex-shrink-0" />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </FadeIn>
+                    ))}
+                </div>
+            </div>
+        </Section>
+    )
+}
 
 /* ──────────────────────── technical specs ──────────────────────── */
 
@@ -659,7 +716,7 @@ export default function App() {
         <div className="min-h-screen bg-tektron-dark text-white overflow-x-hidden">
             <Navbar />
             <Hero />
-
+            <ValueProposition />
             <TechnicalSpecs />
             <LocationSection />
             <WastedSpace />
