@@ -67,10 +67,11 @@ function Navbar() {
                     <div className="w-8 h-8 rounded-lg bg-tauste-red flex items-center justify-center">
                         <Monitor className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-lg font-bold tracking-tight">
+                    <span className="text-lg font-bold tracking-tight flex items-center gap-3">
                         <span className="text-white">Tektron</span>
-                        <span className="text-gray-warm mx-2">×</span>
-                        <span className="text-tauste-red">Tauste</span>
+                        <span className="text-sm font-medium text-gray-400 border-l border-gray-700 pl-3">
+                            Em parceria com o Tauste Supermercados
+                        </span>
                     </span>
                 </div>
                 <a
@@ -117,12 +118,10 @@ function Hero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6"
                 >
-                    Transformando o{' '}
+                    Espaço livre ->{' '}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-tauste-red to-red-400">
-                        espaço ocioso
+                        receita recorrente.
                     </span>
-                    <br />
-                    em renda.
                 </motion.h1>
 
                 <motion.p
@@ -190,33 +189,6 @@ function Hero() {
 }
 
 /* ──────────────────────── value proposition ──────────────────────── */
-
-const cards = [
-    {
-        icon: DollarSign,
-        title: 'Zero Investimento',
-        subtitle: 'Sem custo. Sem risco.',
-        description:
-            'A Tektron arca com 100% dos custos de instalação, energia elétrica independente e manutenção contínua. O Tauste não investe um centavo — apenas disponibiliza o espaço.',
-        highlights: ['Instalação gratuita', 'Energia independente', 'Manutenção inclusa'],
-    },
-    {
-        icon: TrendingUp,
-        title: 'Renda Extra Passiva',
-        subtitle: 'Seu espaço gerando receita.',
-        description:
-            'Transforme metros quadrados ociosos em uma fonte de receita recorrente. A fachada do Tauste passa a gerar valor sem nenhum esforço operacional.',
-        highlights: ['Receita recorrente', 'Sem esforço operacional', 'Valorização do imóvel'],
-    },
-    {
-        icon: Cpu,
-        title: 'Diferencial Tecnológico',
-        subtitle: 'À frente da concorrência.',
-        description:
-            'Um painel LED de alta resolução na esquina mais movimentada da região posiciona o Tauste como referência em inovação.',
-        highlights: ['Alta resolução LED', 'Imagem premium', 'Exclusividade'],
-    },
-]
 
 function ValueProposition() {
     return (
@@ -391,7 +363,7 @@ const benefits = [
     },
     {
         icon: ShieldCheck,
-        title: 'Zero Dor de Cabeça',
+        title: 'Zero Preocupação',
         desc: 'Licenças, prefeitura, elétrica, manutenção e criação de arte para terceiros: tudo por conta da Tektron.',
     },
 ]
@@ -535,8 +507,8 @@ function ImageShowcase() {
     */
     const examples = [
         { src: '/exemplo-1.png', label: 'Exemplo de painel instalado' },
-        { src: '/exemplo-2.png', label: 'Visão da Rio Branco' },
-        { src: '/exemplo-3.png', label: 'Visão da Capitão Gomes Duarte' },
+        { src: '/exemplo-2.png', label: 'Vista da Rio Branco' },
+        { src: '/exemplo-3.png', label: 'Vista da Capitão Gomes Duarte' },
     ]
 
     return (
