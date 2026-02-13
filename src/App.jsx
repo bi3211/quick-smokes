@@ -427,21 +427,24 @@ function WastedSpace() {
                         <div className="relative">
                             {/* Image placeholder — replace src with your local image */}
                             <div className="relative rounded-2xl overflow-hidden border-2 border-dashed border-gray-700 group">
-                                <img
-                                    src="/local-vazio.jpg"
-                                    alt="Espaço vazio na esquina do Tauste"
+                                <video
+                                    src="/local-vazio.mp4"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
                                     className="w-full aspect-[4/3] object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500"
                                     onError={(e) => {
                                         e.target.style.display = 'none'
                                         e.target.nextSibling.style.display = 'flex'
                                     }}
                                 />
-                                {/* Fallback if image not found */}
+                                {/* Fallback if video not found */}
                                 <div className="w-full aspect-[4/3] bg-tektron-card items-center justify-center hidden">
                                     <div className="text-center">
                                         <MapPin className="w-12 h-12 text-gray-600 mx-auto mb-3" />
-                                        <p className="text-gray-500 text-sm">Adicione a foto do local em</p>
-                                        <code className="text-xs text-tauste-red">/public/local-vazio.jpg</code>
+                                        <p className="text-gray-500 text-sm">Adicione o vídeo do local em</p>
+                                        <code className="text-xs text-tauste-red">/public/local-vazio.mp4</code>
                                     </div>
                                 </div>
                             </div>
